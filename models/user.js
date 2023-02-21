@@ -47,6 +47,9 @@ module.exports = (sequelize, DataTypes) => {
       hooks: {
         beforeCreate (instance, attributes) {
           instance.password = generatePassword(instance.password)
+        },
+        afterCreate: record => {
+          delete record.dataValues.password
         }
       }
     }
