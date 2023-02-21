@@ -39,10 +39,10 @@ class UserController {
 
           responseSuccess(res, 200, accessToken, true)
         } else {
-          throw new Error({ name: 'InvalidPassword' })
+          throw { name: 'InvalidPassword' }
         }
       } else {
-        throw new Error({ name: 'InvalidUsername' })
+        throw { name: 'InvalidUsername' }
       }
     } catch (err) {
       errHandler(res, err)
