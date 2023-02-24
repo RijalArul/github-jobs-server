@@ -8,7 +8,7 @@ class JobController {
     try {
       const resp = await axios({
         method: 'GET',
-        url: `${process.env.API_URL}?page=${page}&description=${description}&location=${location}&type=${type}`
+        url: `${process.env.API_URL}/positions.json?page=${page}&description=${description}&location=${location}&type=${type}`
       })
       responseSuccess(res, 200, resp.data, true)
     } catch (err) {
@@ -21,7 +21,7 @@ class JobController {
     try {
       const resp = await axios({
         method: 'GET',
-        url: `${process.env.API_URL}/${id}`
+        url: `${process.env.API_URL}/positions/${id}`
       })
 
       responseSuccess(res, 200, resp.data, true)
